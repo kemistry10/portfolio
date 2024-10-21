@@ -123,22 +123,6 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div className="text-left">
             <Greeting />
-              {/* <motion.h1 
-                className="text-6xl mb-4 pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-left font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
-                initial={{ opacity: 0, y: 20 }}
-                animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                Ketan Mistry
-              </motion.h1> */}
-              {/* <motion.p 
-                className="text-4xl mb-6 "
-                initial={{ opacity: 0, y: 20 }}
-                animate={aboutInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                Frontend Developer
-              </motion.p> */}
               <HyperTextDemo />
               <motion.p 
                 className="text-muted-foreground mb-4 text-xl"
@@ -155,12 +139,6 @@ function App() {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <motion.div>
-                {/* <TextShimmer className="inline-flex items-center justify-center">
-                <span>
-                  View CV
-                  </span>{"  "}
-                <ArrowRightCircle className="mr-2 h-4 w-4" />
-                </TextShimmer> */}
                 <RainbowButtonDemo />
                 </motion.div>
               </motion.div>
@@ -171,7 +149,6 @@ function App() {
               animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              {/* <OrbitingCirclesAnimation /> */}
               <IconCloudDemo />
             </motion.div>
           </div>
