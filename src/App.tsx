@@ -93,7 +93,7 @@ function App() {
               </div>
               <div className="name">Ketan Mistry</div>
             </div>
-            <ul className="flex space-x-4">
+            <ul className="space-x-4 hidden sm:flex">
               {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
                 <li key={item} className='hover:text-blue-350 hover:underline'>
                   <a
