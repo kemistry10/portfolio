@@ -81,7 +81,7 @@ function App() {
 
   return (
     
-    <div className="min-h-screen bg-background text-foreground relative">
+    <div className="min-h-screen bg-background relative">
       <SpaceBackground />
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-gray-200/20">
         <nav className="container mx-auto px-6 py-4">
@@ -120,8 +120,8 @@ function App() {
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          <div className="text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-white">
+          <div className="text-left sm:text-center md:text-left">
             <Greeting />
               <HyperTextDemo />
               <motion.p 
@@ -144,7 +144,7 @@ function App() {
               </motion.div>
             </div>
             <motion.div 
-              className="flex justify-center border-none"
+              className="flex justify-center border-none sm:justify-center md:justify-start"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
@@ -162,7 +162,7 @@ function App() {
           animate={skillsInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Skills</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">Skills</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
             {skills.map((skill, index) => (
               <motion.div
@@ -174,7 +174,7 @@ function App() {
               >
                 <img src={skill.icon} alt={skill.name} className="w-16 h-16 mb-2" />
                 <motion.span
-                  className="text-sm font-medium"
+                  className="text-sm font-medium text-white"
                   initial={{ opacity: 0, x: 50 }}
                   animate={skillsInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
@@ -194,7 +194,7 @@ function App() {
           animate={projectsInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-white">Projects</h2>
           <Carousel 
             ref={emblaRef}
             className="w-full max-w-10xl mx-auto"
@@ -208,8 +208,8 @@ function App() {
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex aspect-square items-center justify-center p-6">
-                        <div className="text-center">
+                      <CardContent className="flex aspect-square items-center justify-center p-6 text-white">
+                        <div className="text-center text-white">
                           <img src={project.image} alt={project.name} className="w-full h-84 object-cover mb-4 rounded-md" />
                           <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
                           <p className="text-sm text-muted-foreground">{project.description}</p>
