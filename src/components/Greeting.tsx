@@ -25,7 +25,7 @@ const Greeting: React.FC = () => {
   }, []);
 
   return (
-    <div className="text-4xl font-bold mb-4 text-white sm:text-center md:text-left">
+    <div className="text-4xl font-bold mb-4 text-white sm:text-center md:text-left sm:pt-24 md:pt-16">
       <span className="mr-2">{greetings[index].text}</span>
       {/* <span className="text-sm text-gray-500">({greetings[index].language})</span> */}
     </div>

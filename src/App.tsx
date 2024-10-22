@@ -115,12 +115,12 @@ function App() {
         <motion.section
           id="about"
           ref={aboutRef}
-          className="pt-8 pb-16 max-w-6xl mx-auto flex items-center justify-center pl-0 pr-0"
+          className="pt-8 pb-16 max-w-6xl mx-auto flex items-center justify-center pl-0 pr-0 sm:pt-24 md:pt-16 lg:pt-0"
           initial={{ opacity: 0, y: 50 }}
           animate={aboutInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-white">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-white sm:pt-24 md:pt-16 lg:pt-0">
           <div className="text-left sm:text-center md:text-left">
             <Greeting />
               <HyperTextDemo />
@@ -210,7 +210,13 @@ function App() {
                     <Card>
                       <CardContent className="flex aspect-square items-center justify-center p-6 text-white">
                         <div className="text-center text-white">
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          >
                           <img src={project.image} alt={project.name} className="w-full h-84 object-cover mb-4 rounded-md" />
+                          </a>
                           <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
                           <p className="text-sm text-muted-foreground">{project.description}</p>
                           <a
