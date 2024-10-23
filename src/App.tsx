@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './App.css'
 import SpaceBackground from './components/SpaceBackground'
-import { Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, ExternalLink, X, Menu } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
 import { Card, CardContent } from "./components/ui/card"
 import { Button } from "./components/ui/button"
@@ -45,6 +45,7 @@ const projects = [
 
 function App() {
   const [activeSection, setActiveSection] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
@@ -77,6 +78,13 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
   
 
   return (
@@ -84,8 +92,7 @@ function App() {
     <div className="min-h-screen bg-background relative">
       <SpaceBackground />
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-gray-200/20">
-        <nav className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
+        <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
             <div className="logo-container">
               <div className="logo">
                 <span className="logo-text">K</span>
@@ -107,6 +114,35 @@ function App() {
                 </li>
               ))}
             </ul>
+
+            {/* Hamburger Menu Button */}
+          <button 
+            className="md:hidden p-2 hover:bg-gray-700 rounded-md transition-colors"
+            onClick={handleMenuClick}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Mobile Menu */}
+          <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+            <ul className="flex flex-col space-y-4">
+              {['About', 'Skills', 'Projects', 'Contact'].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    className={`text-sm font-medium transition-colors hover:text-primary nav-item ${
+                      activeSection === item.toLowerCase() ? 'text-primary' : 'text-muted-foreground'
+                    }`}
+                    onClick={handleNavClick}
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+
           </div>
         </nav>
       </header>
