@@ -117,7 +117,7 @@ function App() {
 
             {/* Hamburger Menu Button */}
           <button 
-            className="md:hidden p-2 hover:bg-gray-700 rounded-md transition-colors"
+            className="sm:hidden p-2 hover:bg-gray-700 rounded-md transition-colors"
             onClick={handleMenuClick}
             aria-label="Toggle menu"
           >
